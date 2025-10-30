@@ -1,7 +1,0 @@
-flask
-tensorflow
-keras
-numpy
-matplotlib
-gunicorn
- 
