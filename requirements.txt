@@ -1,7 +1,6 @@
-flask
-tensorflow
-keras
-numpy
-matplotlib
-gunicorn
- 
+flask==3.0.3
+gunicorn==23.0.0
+tensorflow-cpu==2.15.0
+keras==2.15.0
+numpy==1.26.4
+pillow==10.4.0
