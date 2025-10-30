@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NeuroScan – Brain Tumor Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>🧠 NeuroScan</h1>
+      <p>Deep Learning‑Based Brain Tumor Detection with Explainability</p>
+      <a href="#upload" class="btn-primary">Upload MRI to Begin</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about section">
+    <div class="container">
+      <h2>Why NeuroScan?</h2>
+      <p>
+        NeuroScan is an AI‑powered diagnostic tool designed to assist radiologists and doctors in detecting brain tumors 
+        from MRI scans. Built on <strong>MobileNetV2</strong>, a lightweight yet powerful deep learning model, 
+        NeuroScan is optimized for <strong>real‑world deployment</strong> — from hospitals with limited resources 
+        to mobile devices in remote areas.
+      </p>
+      <p>
+        Unlike traditional heavy CNN models, MobileNetV2 enables <strong>fast, efficient, and accurate predictions</strong> 
+        without requiring high‑end GPUs. This makes NeuroScan practical for real‑time use in clinical settings, 
+        and even adaptable for mobile health applications.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features section">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="feature-grid">
+        <div>⚡ Lightweight MobileNetV2 model for real‑time use</div>
+        <div>📱 Deployable on mobile and edge devices</div>
+        <div>🔥 Grad‑CAM explainability for transparency</div>
+        <div>🎯 High accuracy on multi‑class brain tumor dataset</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section id="upload" class="upload-section section">
+    <div class="container">
+      <h2>Upload MRI Image</h2>
+      <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data" class="upload-box">
+        <input type="file" name="file" id="fileInput" accept="image/*" hidden required>
+        <label for="fileInput" class="drop-area">
+          <span>📂 Drag & Drop or Click to Upload</span>
+        </label>
+        <button type="submit" class="btn-primary">Detect Tumor</button>
+      </form>
+      <div id="preview"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sameer Inamdar</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
